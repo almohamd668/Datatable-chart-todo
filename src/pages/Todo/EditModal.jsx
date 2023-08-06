@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
-import { updateTodo } from "./store/todoSlice";
+import { updateTodo } from "../../store/todoSlice";
 import { useDispatch } from "react-redux";
 
 function EditModal(props) {
@@ -14,10 +14,9 @@ function EditModal(props) {
 
   const existingUser = props.users.filter((f) => f.id == props.userId);
   const { name, desc } = existingUser[0];
-    
+
   const [uName, setUname] = useState(name);
   const [uDesc, setUdesc] = useState(desc);
-
 
   const handleUpdate = (e) => {
     e.preventDefault;
@@ -25,7 +24,7 @@ function EditModal(props) {
       updateTodo({
         name: uName,
         id: props.userId,
-        desc: uDesc
+        desc: uDesc,
       })
     );
   };
@@ -65,7 +64,6 @@ function EditModal(props) {
                 value={uDesc}
               />
             </div>
-           
           </form>
         </Modal.Body>
         <Modal.Footer>

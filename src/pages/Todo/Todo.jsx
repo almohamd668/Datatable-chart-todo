@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { addTodo, deleteTodo } from "../../store/todoSlice";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import EditModal from "../../EditModal";
+import EditModal from "./EditModal";
 
 const Todo = () => {
   const dispatch = useDispatch();
@@ -74,7 +74,6 @@ const Todo = () => {
           </div>
           <DatePicker
             className="form-control w-100 "
-            
             selected={selectedDate}
             showTimeSelect
             dateFormat="Pp"
@@ -94,7 +93,7 @@ const Todo = () => {
             </tr>
           </thead>
           <tbody>
-            {todos.map((todo,idx) => (
+            {todos.map((todo, idx) => (
               <tr key={todo.id}>
                 <td>{idx + 1}</td>
                 <td>{todo.name}</td>
