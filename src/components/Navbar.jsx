@@ -52,6 +52,11 @@ const Navbar = () => {
                 Charts
               </Link>
             </li>
+            <li className="nav-item">
+            <Link className="nav-link" to={"todo"}>
+              Todo app 
+            </Link>
+          </li>
             </ul>
           </div>
         </div>

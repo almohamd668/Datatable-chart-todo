@@ -1,11 +1,12 @@
 
 import './App.css';
-// import Todo from './pages/Todo/todo';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter , Routes, Route} from 'react-router-dom';
 import DTest from './DataTable/dTest';
 import Navbar from './components/Navbar';
 import DoughnutChart from './charts/DoughnutChart';
+import Todo from './pages/Todo/Todo';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
        <Route path='/posts' element={<DTest url={"posts"}/>}></Route>
        <Route path='/todos' element={<DTest url={"todos"}/>}></Route>
        <Route path='/charts' element={<DoughnutChart url={"charts"}/>}></Route>
+       <Route path='/todo' element={<Todo url={"todo"}/>}></Route>
        </Routes>
      </BrowserRouter>
     </>
