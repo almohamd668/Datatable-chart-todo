@@ -1,0 +1,11 @@
+/* .navbar .active {
+color: red;
+font-weight: bold;
+} */
+li {
+    cursor: pointer;
+    border-radius: 3px;
+    background: hsla(218, 80%, 88%, 0.575);
+    color: #7b7575;
+    margin: 0 10px ;
+}
