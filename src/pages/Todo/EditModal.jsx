@@ -70,7 +70,7 @@ function EditModal(props) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <button className="btn btn-sm btn-primary" form="editModal">
+          <button className="btn  btn-primary" form="editModal">
             {" "}
             Update
           </button>

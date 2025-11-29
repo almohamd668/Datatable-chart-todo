@@ -8,7 +8,6 @@ import EditModal from "./EditModal";
 const Todo = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todos);
-  console.log(todos);
 
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
@@ -17,29 +16,27 @@ const Todo = () => {
 
   useEffect(() => {
     todos.length && setId(todos[todos.length - 1].id + 1);
-  }, [todos]);
-
-  useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(id);
-    dispatch(
-      addTodo({
-        id,
-        name,
-        desc,
-        date: selectedDate.toLocaleDateString(undefined, {
-          day: "numeric",
-          hour: "numeric",
-          minute: "numeric",
-        }),
-      })
-    );
-    setName("");
-    setDesc("");
+    if (name !== "" && desc !== "") {
+      dispatch(
+        addTodo({
+          id,
+          name,
+          desc,
+          date: selectedDate.toLocaleDateString(undefined, {
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+          }),
+        })
+      );
+      setName("");
+      setDesc("");
+    }
   };
   const handleDelete = (id) => {
     dispatch(deleteTodo({ id: id }));
